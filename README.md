@@ -1,4 +1,4 @@
 firebug-lite-loader
 ===================
 
-jQuery loader for firebug lite
+jQuery loader for Firebug Lite
