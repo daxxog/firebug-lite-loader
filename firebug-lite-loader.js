@@ -36,11 +36,19 @@
         })(document, 'createElement', 'setAttribute', 'getElementsByTagName', 'FirebugLite', '4', 'firebug-lite.js', 'releases/lite/latest/skin/xp/sprite.png', 'https://getfirebug.com/', '#startOpened');
     };
 
-    $.fn.FirebugLiteLoader = function() {
-        $(this).click(function() {
-            new FirebugLiteLoader();
-        });
-    };
+    if(typeof(jQuery) !== 'undefined') {
+        (function($) {
+            $.fn.FirebugLiteLoader = function() {
+                $(this).click(function() {
+                    new FirebugLiteLoader();
+                });
+            };
+
+            $(function() {
+                $('a[href="#firebug"]').FirebugLiteLoader();
+            });
+        }(jQuery));
+    }
 
     return FirebugLiteLoader;
 }));
